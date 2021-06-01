@@ -1,5 +1,4 @@
 <?php
-use Flarum\Forum\Content\AssertRegistered;
 use Illuminate\Contracts\Events\Dispatcher;
 use XEngine\Signature\Validation\ValidateSignature;
 use XEngine\Signature\Model;
@@ -16,18 +15,16 @@ return [
   }),
 
 new Extend\Locales(__DIR__.'/locale'),
-        
+
 (new Extend\Frontend('forum'))
   ->js(__DIR__.'/js/dist/forum.js')
   ->css(__DIR__.'/less/signature.less')
-  ->css(__DIR__.'/less/trumbowyg.less'),
-  
+  ->css(__DIR__.'/less/trumbowyg.less')
+  ->route('/settings/signature', 'settings.signature'),
+
 (new Extend\Frontend('admin'))
   ->js(__DIR__.'/js/dist/admin.js'),
-  
-(new Extend\Frontend('forum'))
-  ->route('/settings/signature', 'settings.signature'),
-  
+
 (new Extend\Routes('api'))
   ->post('/settings/signature/validate', 'settings.signature', ValidateSignature::class),
 
