@@ -39,6 +39,5 @@ return [
         ->post('/settings/signature/validate', 'settings.signature', ValidateSignature::class),
 
     (new Extend\Event())
-        ->subscribe(Model\UserSignateAttributes::class),
-    }
+        ->subscribe(Model\UserSignatureAttributes::class),
 ];
