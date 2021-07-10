@@ -38,7 +38,7 @@ return [
     (new Extend\Routes('api'))
         ->post('/settings/signature/validate', 'settings.signature', ValidateSignature::class),
 
-    function (Dispatcher $events) {
-        $events->subscribe(Model\UserSignatureAttributes::class);
+    (new Extend\Event()
+        ->subscribe(Model\UserSignateAttributes::class),
     }
 ];
