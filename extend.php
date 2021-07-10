@@ -20,7 +20,7 @@ return [
     new Extend\Locales(__DIR__ . '/locale'),
 
     (new Flarum\Extend\ApiSerializer(UserSerializer::class))
-        ->mutate(function (UserSerializer $serializer, User $user, array $attributes) {
+        ->attributes(function (UserSerializer $serializer, User $user, array $attributes) {
             $attributes['signature'] = $user->signature;
 
             return $attributes;
