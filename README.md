@@ -1,5 +1,5 @@
 
-# Cookie Consent by FriendsOfFlarum
+# Flarum Signature Extension by Katos
 
 - Support me: https://www.buymeacoffee.com/katos
 - GitHub: https://github.com/katosdev/signature
